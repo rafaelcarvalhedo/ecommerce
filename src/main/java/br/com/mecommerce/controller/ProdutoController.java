@@ -19,7 +19,7 @@ public class ProdutoController {
         return productRepository.findAll(pageable);
     }
 
-    @GetMapping(name = "/", produces = "application/json",params = {"nome"})
+    @GetMapping(name = "/", produces = "application/json",params = {"name"})
     public Page<Product> getClientesPorName(Pageable pageable, @RequestParam(name = "name") String name) {
         return productRepository.findByNameContainingIgnoreCase(pageable,name);
     }
