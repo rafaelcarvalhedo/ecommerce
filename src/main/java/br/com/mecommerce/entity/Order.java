@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "\"order\"")
-public class Order implements Serializable {
+public class Order extends BaseEntity{
     @Id
     @GeneratedValue
     private Integer id;

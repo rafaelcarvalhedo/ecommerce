@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Table
-public class OrderItem implements Serializable {
+public class OrderItem extends BaseEntity {
     @Id
     @GeneratedValue
     private Integer id;
