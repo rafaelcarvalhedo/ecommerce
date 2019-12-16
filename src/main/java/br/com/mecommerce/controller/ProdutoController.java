@@ -24,4 +24,10 @@ public class ProdutoController {
         return productRepository.findByNameContainingIgnoreCase(pageable,name);
     }
 
+
+    @PutMapping(name = "/", produces = "application/json")
+    public Product save(@RequestBody() Product product) {
+        return productRepository.save(product);
+    }
+
 }
