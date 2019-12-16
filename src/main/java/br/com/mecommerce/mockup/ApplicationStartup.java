@@ -2,8 +2,10 @@ package br.com.mecommerce.mockup;
 
 import br.com.mecommerce.entity.Customer;
 import br.com.mecommerce.entity.Product;
+import br.com.mecommerce.entity.User;
 import br.com.mecommerce.repository.CustomerRepository;
 import br.com.mecommerce.repository.ProductRepository;
+import br.com.mecommerce.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
@@ -20,6 +22,9 @@ implements ApplicationListener<ApplicationReadyEvent> {
 
   @Autowired
   private CustomerRepository customerRepository;
+
+  @Autowired
+  private UserRepository userRepository;
 
 
   /**
@@ -43,6 +48,8 @@ implements ApplicationListener<ApplicationReadyEvent> {
     productRepository.save(new Product(4,"Smartphone Motorola Moto G7 Play",new BigDecimal(8.12)));
     productRepository.save(new Product(5,"Macbook de 12 Polegadas, 512 GB",new BigDecimal(123.12)));
     // here your code ...
+
+    userRepository.save(new User("rafael","123","Rafael Carvalhedo de Sousa"));
 
     return;
   }
