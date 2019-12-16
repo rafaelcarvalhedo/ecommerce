@@ -4,19 +4,13 @@ package br.com.mecommerce.entity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
 @Table(name = "\"order\"")
 public class Order implements Serializable {
     @Id
-    @GeneratedValue(generator = "order_generator")
-    @SequenceGenerator(
-            name = "order_generator",
-            sequenceName = "order_sequence",
-            initialValue = 10000000
-    )
+    @GeneratedValue
     private Integer id;
     @ManyToOne(fetch = FetchType.EAGER)
     private Customer customer;
