@@ -23,7 +23,8 @@ public class UserController {
     public ResponseEntity authUser(@RequestParam(name = "login") String login,@RequestParam(name = "password") String password) {
         Optional<User> user = userRepository.findByLoginAndPassword(login,password);
         if(user.isPresent())
-            ResponseEntity.ok(user.get());
+           return ResponseEntity.ok(user.get());
+
         return ResponseEntity.notFound().build();
     }
 
