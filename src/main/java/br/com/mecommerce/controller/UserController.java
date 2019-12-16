@@ -19,7 +19,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping(name = "/", produces = "application/json",params = {"login","password"})
+    @GetMapping(name = "/auth", produces = "application/json",params = {"login","password"})
     public ResponseEntity authUser(@RequestParam(name = "login") String login,@RequestParam(name = "password") String password) {
         Optional<User> user = userRepository.findByLoginAndPassword(login,password);
         if(user.isPresent())
