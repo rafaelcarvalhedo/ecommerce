@@ -25,8 +25,6 @@ public class Order implements Serializable {
     @JsonManagedReference
     private List<OrderItem> items;
 
-    private BigDecimal totalFreight;
-
 
     public Integer getId() {
         return id;
@@ -50,14 +48,6 @@ public class Order implements Serializable {
 
     public void setItems(List<OrderItem> items) {
         this.items = items;
-    }
-
-    public BigDecimal getTotalFreight() {
-        return totalFreight;
-    }
-
-    public void setTotalFreight(BigDecimal totalFreight) {
-        this.totalFreight = totalFreight;
     }
 
 }
