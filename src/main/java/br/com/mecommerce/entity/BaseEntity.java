@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public abstract class BaseEntity implements Serializable {
 
-    private boolean active;
+    private boolean active = true;
 
     public boolean isActive() {
         return active;
